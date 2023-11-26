@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+   <title>
+       Recipes Home
+   </title>
+   <body>
+       <h1 style="text-align:center">Welcome to our Recipes</h1>
+       <br>
+       <br>
+       <a href ="{%url 'login' %}">  Login  </a>
+       <br>
+       <a href ="{%url 'logout' %}"> Logout </a>
+       <br>
+       <br>
+       <img src="{% static 'recipes/beach.jpg' %}" alt="home" width="600" height="300">
+   </body>
+</html>
