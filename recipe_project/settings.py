@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-v8n-u)o3uqdy7f@ok&4=jo97^9en0fubr7d@(2d)(fqvv^^&@+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['recipe-app-75kx.onrender.com']
+ALLOWED_HOSTS = ['recipe-app-75kx.onrender.com', '127.0.0.1']
 
 
 # Application definition
@@ -128,6 +128,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS=[
+   BASE_DIR / 'static'
+]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT= BASE_DIR / 'media'
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
